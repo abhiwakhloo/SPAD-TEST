@@ -16,15 +16,15 @@ import java.util.Properties;
  */
 public class DB {
 
-    public static String user = "root";
-    public static String connection = "jdbc:mysql://localhost:3306/library";
+    public static String user = "abhi";
+    public static String connection = "jdbc:mysql://localhost:3306/library?useSSL=false";
     
-    public static Connection getConnection() {
-        Connection con = null;
+    public static Connection getConnection() throws SQLException {
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library?autoReconnect=true&useSSL=false","abhi","Abhi@123");
         try {
             Properties props = new Properties();
             props.put("user", user);
-            props.put("password", "your password here");
+            props.put("password", "Abhi@123");
             props.put("useUnicode", "true");
             props.put("useServerPrepStmts", "false"); // use client-side prepared statement
             props.put("characterEncoding", "UTF-8"); // ensure charset is utf8 here
